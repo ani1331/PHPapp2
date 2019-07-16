@@ -13,5 +13,5 @@ if ($_SERVER['argc'] >= 1) {
             break;
     }
 } else {
-    echo 'Write "import" or "export" keywords to make application work.';
+    die('Write "import" or "export" keywords to make application work.');
 }

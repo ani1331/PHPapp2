@@ -1,21 +1,25 @@
 <?php
+//
+//require_once ('functionality.php');
+//require_once ('connection.php');
+require_once ('exportConditions.php');
 
-$file_name = $argv[3];
-$dbName = $argv[2];
-require_once ('functionality.php');
-require_once ('connection.php');
 
-function export($file_name, $dbName, $withData = true)
+
+export($withData = true);
+
+function export($withData = true)
 {
+    global $argv;
+    $file_name = $argv[3];
+    $dbName = $argv[2];
 
-
-//CONNECTION
     $connection = connection($dbName);
-//CONNECTION
 
-//TABLE STRUCTURE
     $tableNames = getTableNames($dbName,$connection);
-//TABLE STRUCTURE
+
+
+
 
 //PRINTING TO FILE
 
@@ -44,4 +48,3 @@ function export($file_name, $dbName, $withData = true)
 
     fclose($fileOpen);
 }
-export($file_name, $dbName);

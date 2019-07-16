@@ -16,7 +16,7 @@ function getTableDataSQl($connection, $tableName) {
             if (empty($val)== true){
             $val = 'NULL';
 //            $val = $val ?? 'NULL';
-            $val  = addslashes($val);
+            $val = addslashes($val);
             } elseif($val !== 'NULL') {
                 $values = "'" . implode("', '", $row) . "'";
             }

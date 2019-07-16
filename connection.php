@@ -4,7 +4,7 @@ function connection($dbName){
 
     $connect = mysqli_connect('localhost', 'root', '1234', $dbName);
     if ($connect == false) {
-        die("ERROR: Can not connect to $dbName" . mysqli_connect_error() . "\n");
+        die("ERROR: Can not connect to $dbName \n" . mysqli_connect_error() . "");
     }
     $val = mysqli_query($connect, "USE " . $dbName . ";");
     if ($val == false) {
